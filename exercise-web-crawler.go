@@ -47,7 +47,7 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 		fmt.Printf("found: %s %q\n", url, body)
 
 		// The approach used in the ideal solution to wait until each
-		// Crawl is finished is to use channels. Each anonymous
+		// Crawl is finished by using channels. Each anonymous
 		// goroutine Crawls as below, but then sends on the channel.
 		// By looping over the same range urls, it's possible to then
 		// wait for a done value to be sent over the channel, which
